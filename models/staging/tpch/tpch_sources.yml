@@ -1,0 +1,16 @@
+version: 2
+sources:
+  - name: tpch
+    description: source tpch data
+    database: PC_DBT_DB
+    schema: DBT_VTTRUONG
+    tables:
+      - name: cust_order
+        description: main order tracking table
+        
+        columns:
+          - name: o_orderkey
+            description: SF*1,500,000 are sparsely populated
+            tests: 
+              - unique
+              - not_null
